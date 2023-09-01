@@ -128,8 +128,8 @@ function display(type, data) {
         <div class="col">
           <div>
             <input
-              placeholder="Search by name"
-              aria-label="Search by name"
+              placeholder="Search by first letter"
+              aria-label="Search by first letter"
               oninput="fetchData('firstLetter', event.target.value)"
               class="form-control bg-black text-light"
               maxlength="1"
