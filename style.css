@@ -76,6 +76,10 @@ a {
   padding: 0;
 }
 
+#mainContainer .col > a.category {
+  padding: 2rem 1rem;
+}
+
 #mainContainer .col > a.category img {
   transition: 0.4s;
 }
@@ -103,6 +107,8 @@ a {
 }
 #mainContainer .col > a.category:hover img {
   filter: brightness(0.3);
+
+  transform: translateY(-20px);
 }
 
 #mainContainer .col > a.ingredient {
