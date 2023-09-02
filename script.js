@@ -150,7 +150,7 @@ function display(type, data) {
               <h4>${el.strCategory}</h4>
               <p>${
                 el.strCategoryDescription.length > 100
-                  ? `${el.strCategoryDescription.slice(0, 100)}...`
+                  ? `${el.strCategoryDescription.slice(0, 120)}...`
                   : el.strCategoryDescription
               }</p>
           </div>
