@@ -36,7 +36,7 @@ async function fetchData(searchType, searchValue) {
         display("meals", nameData.meals.slice(0, 20));
         break;
       case "firstLetter":
-        if (!searchValue) return;
+        if (!searchValue || !/\w+/gi.test(searchValue)) return;
         const FLRes = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?f=${searchValue}`);
         if (!FLRes.ok) throw new Error("Couldn't fetch the meals :(");
         const FLData = await FLRes.json();
