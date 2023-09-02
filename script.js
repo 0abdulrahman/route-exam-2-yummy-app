@@ -11,14 +11,14 @@ function toggleSpinner() {
   $(".spinner").toggleClass("loading");
 }
 
-$("aside .right button").on("click", () => {
-  toggleSideBar();
-});
-
 function showError(err) {
   const p = `<p class='text-danger text-center w-100 fw-semibold'>${err}</p>`;
   mainContainer.innerHTML = p;
 }
+
+$("aside .right button").on("click", () => {
+  toggleSideBar();
+});
 
 async function fetchData(searchType, searchValue) {
   try {
