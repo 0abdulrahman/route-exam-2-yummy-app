@@ -140,6 +140,7 @@ aside {
   height: 100vh;
   background-color: var(--main-dark);
   z-index: 99;
+  box-shadow: 10px 0 20px rgba(0, 0, 0, 0.4);
 }
 
 aside .right {
@@ -218,6 +219,9 @@ aside .left nav a:nth-of-type(4) {
 aside .left nav a:nth-of-type(5) {
   transition-delay: 0.6s;
 }
+aside .left nav a:nth-of-type(6) {
+  transition-delay: 0.7s;
+}
 
 aside.open .left nav a {
   margin-top: 0;
@@ -262,4 +266,22 @@ aside.open .left .copyrights {
 
 #searchForm input::placeholder {
   color: #727272;
+}
+
+div:has(input[name="password"]) .toggle-password {
+  display: block;
+  position: absolute;
+  right: 0.6rem;
+  top: 0.455rem;
+  color: rgba(13, 13, 13, 0.2);
+  cursor: pointer;
+}
+
+div:has(input[name="password"]:focus) .toggle-password {
+  color: #0d0d0d;
+}
+
+.is-invalid,
+.is-valid {
+  background-image: none !important;
 }

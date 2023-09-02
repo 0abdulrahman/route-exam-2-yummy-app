@@ -255,7 +255,7 @@ function display(type, data) {
           </div>
         </div>
         <div class="col">
-          <div>
+          <div class="position-relative">
             <input
               type="password"
               name="password"
@@ -268,6 +268,7 @@ function display(type, data) {
               Your password must be at least 8 characters long, containing at least 1 uppercase letter, 1
               lowercase letter and 1 number
             </p>
+            <span class="toggle-password"><i class="fa-solid fa-eye-slash" onclick="togglePassword()"></i></span>
           </div>
         </div>
         <div class="col">
@@ -387,6 +388,12 @@ function display(type, data) {
 
 function navigate(to) {
   switch (to) {
+    case "home":
+      searchPage.innerHTML = "";
+      fetchData(null);
+      toggleSideBar();
+      validationListeners("remove");
+      break;
     case "search":
       display("search");
       mainContainer.innerHTML = "";
@@ -517,4 +524,13 @@ function validation(type, value) {
     default:
       throw new Error("Provide something to validate!");
   }
+}
+
+function togglePassword() {
+  if ($('#contact input[name="password"]').attr("type") === "password") {
+    $('#contact input[name="password"]').attr("type", "text");
+  } else {
+    $('#contact input[name="password"]').attr("type", "password");
+  }
+  $(".toggle-password i").toggleClass("fa-eye");
 }
